@@ -1,3 +1,5 @@
+import pyperclip
+
 print("...........................Password Locker...........................")
 
 class User:
@@ -78,6 +80,6 @@ class User:
     
 
     @classmethod
-    def copy_email(cls,number):
-        contact_found = Contact.find_by_number(number)
-        pyperclip.copy(contact_found.email)
+    def copy_user_name(cls,password):
+        user_found = User.find_by_password(password)
+        pyperclip.copy(user_found.user_name)

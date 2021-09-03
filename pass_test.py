@@ -46,7 +46,7 @@ class TestContact(unittest.TestCase):
             objects to our user_list
             '''
             self.new_user.save_user()
-            test_user = User("Test","user","000000") # new user
+            test_user = User("Test","user","12345") # new user
             test_user.save_user()
             self.assertEqual(len(User.user_list),2)
 
@@ -55,7 +55,7 @@ class TestContact(unittest.TestCase):
             test_delete_user to test if we can remove a user from our user list
             '''
             self.new_user.save_user()
-            test_user = User("Test","user","000000") # new user
+            test_user = User("Test","user","12345") # new user
             test_user.save_user()
 
             self.new_user.delete_user()# Deleting a contact object
@@ -104,7 +104,7 @@ class TestContact(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        User.copy_user_name("000011")
+        User.copy_user_name("12345")
 
         self.assertEqual(self.new_user.user_name,pyperclip.paste())
         
