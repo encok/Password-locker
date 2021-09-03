@@ -23,6 +23,14 @@ class TestContact(unittest.TestCase):
         self.assertEqual(self.new_user.user_name,"James")
         self.assertEqual(self.new_user.first_name,"Muriuki")
         self.assertEqual(self.new_user.password,"12345")
+
+    def test_save_user(self):
+
+        '''
+        save_user method saves contact objects into contact_list
+        '''
+
+        User.user_list.append(self)
         
 
 
