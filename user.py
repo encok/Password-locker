@@ -36,3 +36,18 @@ class User:
         '''
 
         User.user_list.remove(self)
+
+    @classmethod
+    def find_by_password(cls,password):
+        '''
+        Method that takes in a password and returns a user that matches that password.
+
+        Args:
+            password: password to search for
+        Returns :
+            User of person that matches the password.
+        '''
+
+        for user in cls.user_list:
+            if user.password == password:
+                return user
