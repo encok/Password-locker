@@ -1,4 +1,5 @@
 print("...........................Password Locker...........................")
+
 class User:
     """
     Class that generates new instances of contacts.
@@ -73,3 +74,10 @@ class User:
         method that returns the user list
         '''
         return cls.user_list
+
+    
+
+    @classmethod
+    def copy_email(cls,number):
+        contact_found = Contact.find_by_number(number)
+        pyperclip.copy(contact_found.email)

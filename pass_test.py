@@ -1,5 +1,6 @@
 import unittest # Importing the unittest module
 from user import User # Importing the contact class
+import pyperclip
 
 class TestContact(unittest.TestCase):
 
@@ -66,10 +67,10 @@ class TestContact(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("Test","user","00000") # new contact
+        test_user = User("Test","user","000011") # new contact
         test_user.save_user()
 
-        found_user = User.find_by_password("00000")
+        found_user = User.find_by_password("000011")
 
         self.assertEqual(found_user.user_name,test_user.user_name)
 
@@ -80,14 +81,14 @@ class TestContact(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("Test","user","00000") # new user
+        test_user = User("Test","user","000011") # new user
         test_user.save_user()
 
-        user_exists = User.user_exist("00000")
+        user_exists = User.user_exist("000011")
 
         self.assertTrue(user_exists)
 
-        
+
 
     def test_display_all_users(self):
         '''
@@ -95,6 +96,17 @@ class TestContact(unittest.TestCase):
         '''
 
         self.assertEqual(User.display_users(),User.user_list)
+
+
+    def test_copy_user_name(self):
+        '''
+        Test to confirm that we are copying the user_name address from a found user
+        '''
+
+        self.new_user.save_user()
+        User.copy_user_name("000011")
+
+        self.assertEqual(self.new_user.user_name,pyperclip.paste())
         
 
 
