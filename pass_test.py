@@ -25,12 +25,29 @@ class TestContact(unittest.TestCase):
         self.assertEqual(self.new_user.password,"12345")
 
     def test_save_user(self):
+        """
+        test case to test if a new user instance has been saved into the User list
 
-        '''
-        save_user method saves contact objects into contact_list
-        '''
+        """
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
+        
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            User.user_list = []
 
-        User.user_list.append(self)
+
+    def test_save_multiple_user(self):
+            '''
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
+            '''
+            self.new_user.save_user()
+            test_user = User("Test","user","000000") # new user
+            test_user.save_user()
+            self.assertEqual(len(User.user_list),2)
         
 
 
