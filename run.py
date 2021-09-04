@@ -3,11 +3,11 @@
 from user import User,Credentials
 def function():
 	print("               ____                             ")
-	print("              |  _ \                            ")
-	print("              | |_) )  ____  ___   ___          ")
-	print("              |  __/  / _  |/ __  / __          ")
-	print("              | |    / (_| |\__ \ \__ \         ")
-	print("              |_|    \_____| ___/  ___/         ")
+	print("              |  _ \                                                 ")
+	print("              | |_) )  ____  ___   ___             ")
+	print("              |  __/  / _  |/ __  / __       ")
+	print("              | |    / (_| |\__ \ \__ \            ")
+	print("              |_|    \_____| ___/  ___/      ")
 function()
 
 def create_user(user_name,password):
