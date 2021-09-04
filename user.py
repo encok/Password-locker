@@ -59,12 +59,12 @@ class Credentials():
                     a_user == user.user_name
         return a_user
 
-    def __init__(self,account,user_name, password):
+    def __init__(self,account,userName, password):
         """
         method that defines user credentials to be stored
         """
         self.account = account
-        self.user_name = user_name
+        self.user_name = userName
         self.password = password
     
     def save_details(self):
@@ -109,3 +109,8 @@ class Credentials():
 
         """
         return cls.credentials_list
+
+    def generatePassword(stringLength=8):
+        """Generate a random password string of letters and digits and special characters"""
+        password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(stringLength))
