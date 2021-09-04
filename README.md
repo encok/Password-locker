@@ -6,8 +6,7 @@ This is a password store application that is used to remember passwords.
 ### Contributors
 By Enock Kipronoh
 ## Description
-{This is a detailed description of your application, including its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }
-
+This is PASSLOCK application that one can use to store passwords for different accounts so one can be able to rememeber them.Here you create new account, login and then proceed to interact with the application which includes creating an account and paswword which you can generate or create your own. You can also search and delete your account.
 ## Setup/Installation Requirements
 * This is a great place
 * to list setup instructions
