@@ -10,6 +10,7 @@ By Enock Kipronoh
 This is Password Locker application that one can use to store passwords for different accounts so one can be able to rememeber them.Here you create new account, login and then proceed to interact with the application which includes creating an account and paswword which you can generate or create your own. You can also search and delete your account.
 ## screenshots
 <img src="images/Screenshot from 2021-09-04 23-14-19.png">
+
 ## Setup/Installation Requirements
 * python3.8
 * pyperclip
