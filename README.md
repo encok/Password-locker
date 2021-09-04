@@ -19,7 +19,7 @@ For one to be able to use this application, you are supposed to have installed p
 ## Cloning
 * Open Terminal {Ctrl+Alt+T}
 
-* git clone ```  ```
+* git clone ``` https://github.com/encok/Password-locker ```
 
 * cd PassLock
 
@@ -66,5 +66,5 @@ For any questions or contributions, these are my email addresses:
 * enckkipronoh@gmail.com<br>
 * enock.kipronoh@student.moringaschool.com
 ## License
-Link to the MIT license in my Github account
+Link to the MIT license in my Github account````https://github.com/encok/Password-locker/blob/master/LICENSE```
 
