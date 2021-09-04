@@ -60,20 +60,20 @@ def main():
         short_code = input().lower()
 
         if short_code == 'cc':
-                print("New User")
+                print("Sign Up")
                 print("-"*10)
 
                 print("User Name ...")
-                user_name= input()
+                user_name = input()
 
-                print ("First name ....")
+                print ("First name ...")
                 first_name = input()
 
                 print("Password ...")
                 password = input()
 
 
-                save_users(create_user(user_name,first_name,password)) # create and save new contact.
+                save_users(create_user(user_name,first_name,password)) # create and save new user.
                 print ('\n')
                 print(f"New User {user_name} {first_name} {password} created")
                 print ('\n')

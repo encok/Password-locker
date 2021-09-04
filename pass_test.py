@@ -1,5 +1,5 @@
 import unittest # Importing the unittest module
-from user import User # Importing the contact class
+from user import User, Credentials # Importing the contact class
 import pyperclip
 
 class TestContact(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestContact(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("James","Muriuki","12345") # create contact object
+        self.new_user = User("James","12345") # create contact object
 
     def test_init(self):
         '''
@@ -22,7 +22,6 @@ class TestContact(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_user.user_name,"James")
-        self.assertEqual(self.new_user.first_name,"Muriuki")
         self.assertEqual(self.new_user.password,"12345")
 
     def test_save_user(self):
@@ -32,83 +31,88 @@ class TestContact(unittest.TestCase):
         """
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
+        
+class TestCredentials(unittest.TestCase):
+    """
+    A test class that defines test cases for credentials class
+
+    """ 
+    def setUp(self):
+        """
+        Method that runs before each individual credentials test methods run.
+
+        """
+        self.new_credential = Credentials('Gmail','Owiti_Charles','yx5Gij43')
+    def test_init(self):
+        """
+        Test case to check if a new Credentials instance has been initialized correctly
+        """
+        self.assertEqual(self.new_credential.account,'Gmail')
+        self.assertEqual(self.new_credential.userName,'Owiti_Charles')
+        self.assertEqual(self.new_credential.password,'yx5Gij43')
+
+    def save_credential_test(self):
+        """
+        test case to test if the crential object is saved into the credentials list.
+
+        """
+        self.new_credential.save_details()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
     def tearDown(self):
-            '''
-            tearDown method that does clean up after each test case has run.
-            '''
-            User.user_list = []
-
-
-    def test_save_multiple_user(self):
-            '''
-            test_save_multiple_user to check if we can save multiple user
-            objects to our user_list
-            '''
-            self.new_user.save_user()
-            test_user = User("Test","user","12345") # new user
-            test_user.save_user()
-            self.assertEqual(len(User.user_list),2)
-
-    def test_delete_user(self):
-            '''
-            test_delete_user to test if we can remove a user from our user list
-            '''
-            self.new_user.save_user()
-            test_user = User("Test","user","12345") # new user
-            test_user.save_user()
-
-            self.new_user.delete_user()# Deleting a contact object
-            self.assertEqual(len(User.user_list),1)
-
-    def test_find_user_by_password(self):
         '''
-        test to check if we can find a user by password and display information
+        method that does clean up after each test case has run.
         '''
+        Credentials.credentials_list = []
 
-        self.new_user.save_user()
-        test_user = User("Test","user","000011") # new contact
-        test_user.save_user()
-
-        found_user = User.find_by_password("000011")
-
-        self.assertEqual(found_user.user_name,test_user.user_name)
-
-
-    def test_user_exists(self):
+    def test_save_many_accounts(self):
         '''
-        test to check if we can return a Boolean  if we cannot find the user.
+        test to check if we can save multiple credentials objects to our credentials list
         '''
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential.save_details()
+        self.assertEqual(len(Credentials.credentials_list),2)
 
-        self.new_user.save_user()
-        test_user = User("Test","user","000011") # new user
-        test_user.save_user()
+    def test_delete_credential(self):
+        """
+        test method to test if we can remove an account credentials from our credentials_list
+        """
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk")
+        test_credential.save_details()
 
-        user_exists = User.user_exist("000011")
+        self.new_credential.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
-        self.assertTrue(user_exists)
+    def test_find_credentialr(self):
+        """
+        test to check if we can find a credential entry by account name and display the details of the credential
+        """
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential.save_details()
 
+        the_credential = Credentials.find_credential("Twitter")
 
+        self.assertEqual(the_credential.account,test_credential.account)
 
-    def test_display_all_users(self):
+    def test_credential_exist(self):
+        """
+        test to check if we can return a true or false based on whether we find or can't find the credential.
+        """
+        self.new_credential.save_details()
+        the_credential = Credentials("Twitter", "mikeycharles", "Mfh45hfk")  
+        the_credential.save_details()
+        credential_is_found = Credentials.if_credential_exist("Twitter")
+        self.assertTrue(credential_is_found)
+
+    def test_display_all_saved_credentials(self):
         '''
-        method that returns a list of all users saved
+        method that displays all the credentials that has been saved by the user
         '''
 
-        self.assertEqual(User.display_users(),User.user_list)
-
-
-    def test_copy_user_name(self):
-        '''
-        Test to confirm that we are copying the user_name address from a found user
-        '''
-
-        self.new_user.save_user()
-        User.copy_user_name("12345")
-
-        self.assertEqual(self.new_user.user_name,pyperclip.paste())
-        
-
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
 if __name__ == '__main__':
     unittest.main()
