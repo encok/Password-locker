@@ -3,23 +3,34 @@
 This is a password store application that is used to remember passwords.
 ## Date of current version
 6/9/2021
-### Contributors
+## Contributors
 By Enock Kipronoh
 ## Description
 This is PASSLOCK application that one can use to store passwords for different accounts so one can be able to rememeber them.Here you create new account, login and then proceed to interact with the application which includes creating an account and paswword which you can generate or create your own. You can also search and delete your account.
 ## Setup/Installation Requirements
-* This is a great place
-* to list setup instructions
-* in a simple
-* easy-to-understand
-* format
-{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? Do I need to install any dependencies? How should I set up my databases? Is there other code this app depends on?}
+* python3.8
+* pyperclip
+* pip
+For one to be able to use this application, you are supposed to have installed python3.8 or 3.6. The Pyperclip and pip dependencies are also supposed to be insyalled in one's machine.
+## Github Livelink
+
+
+## Cloning
+
+
+### Running the Application
+* To run the application, open the cloned file in terminal and run the following commands:
+
+        $ chmod +x run.py
+        $ ./run.py
+* To run test for the application
+        $ python3.8 pass_test.py 
 ## Known Bugs
-{Are there issues that have not yet been resolved that you want to let users know you know? Outline any issues that would impact use of your application. Share any workarounds that are in place. }
+No known bugs as of now, any bugs discovered will be appreaciated
 ## Technologies Used
-{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}
+The technologies used include python3.8, figlet in python that was used to draw the pass drawing in the first section. 
+Pyperclip is another technology used to facilitate copying and pasting.
 ## Support and contact details
-{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}
+* enckkipronoh@gmail.com<br>
+* enock.kipronoh@student.moringaschool.com
 ### License
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-Copyright (c) {year} **{List of contributors or company name}**
