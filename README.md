@@ -67,5 +67,5 @@ For any questions or contributions, these are my email addresses:
 * enckkipronoh@gmail.com<br>
 * enock.kipronoh@student.moringaschool.com
 ## License
-Link to the MIT license in my Github account````https://github.com/encok/Password-locker/blob/master/LICENSE```
+Link to the MIT license in my Github account ``` https://github.com/encok/Password-locker/blob/master/LICENSE ```
 
