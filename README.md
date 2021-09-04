@@ -1,4 +1,5 @@
-# Password Locker
+# Application Name
+ Password Locker
 # Brief description of application
 This is a password store application that is used to remember passwords.
 ## Date of current version
@@ -16,7 +17,13 @@ For one to be able to use this application, you are supposed to have installed p
 
 
 ## Cloning
+* Open Terminal {Ctrl+Alt+T}
 
+* git clone ```  ```
+
+* cd PassLock
+
+* code . or atom . based on the text editor you have.
 
 ### Running the Application
 * To run the application, open the cloned file in terminal and run the following commands:
@@ -26,11 +33,14 @@ For one to be able to use this application, you are supposed to have installed p
 * To run test for the application
         $ python3.8 pass_test.py 
 ## Known Bugs
-No known bugs as of now, any bugs discovered will be appreaciated
+No known bugs as of now, any bugs discovered, pull requests will be appreaciated
 ## Technologies Used
 The technologies used include python3.8, figlet in python that was used to draw the pass drawing in the first section. 
 Pyperclip is another technology used to facilitate copying and pasting.
 ## Support and contact details
+For any questions or contributions, these are my email addresses:
 * enckkipronoh@gmail.com<br>
 * enock.kipronoh@student.moringaschool.com
-### License
+## License
+Link to the MIT license in my Github account
+
